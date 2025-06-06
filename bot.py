@@ -6,7 +6,8 @@ import discord
 import os
 
 TOKEN = os.getenv("TOKEN")
-ADMIN_USER_ID = int(os.getenv("ADMIN_USER_ID", "0"))
+ADMIN_USER_ID = os.getenv("ADMIN_USER_ID", "0").strip().replace("=", "")
+ADMIN_USER_ID = int(ADMIN_USER_ID)
 DOMAIN = os.getenv("DOMAIN")
 
 intents = discord.Intents.default()
